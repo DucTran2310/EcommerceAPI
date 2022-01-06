@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
     }, process.env.JWT_SECURITY,
       { expiresIn: "3d" }
     )
-
+    // nó sẽ gửi hết thông tin ._doc để lấy phần doc ra thôi
     const { password, ...others } = user._doc;
 
     res.status(200).json({ ...others, accessToken })
